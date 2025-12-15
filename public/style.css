@@ -67,3 +67,21 @@ button {
 button:hover {
   background: #4752c4;
 }
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.header {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#messages {
+  padding: 10px;
+}
+
