@@ -1,87 +1,82 @@
-body {
+/* RESET */
+* {
+  box-sizing: border-box;
   margin: 0;
-  background: #313338;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 0;
 }
 
-.chat {
+/* PAGE */
+body {
+  background: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 900px;
-  margin: auto;
 }
 
-#messages {
+/* TITLE / HEADER */
+.hero {
+  text-align: center;
+  padding: 20px;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #222;
+}
+
+/* CHAT CONTAINER */
+.chat {
   flex: 1;
-  padding: 16px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
-/* message bubbles (left side, like Discord) */
+/* MESSAGE LIST */
+#messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* MESSAGE BUBBLES */
 .message {
-  background: #2b2d31;
-  color: #dbdee1;
+  background: #1e1e1e;
+  color: white;
   padding: 10px 14px;
   border-radius: 10px;
+  margin-bottom: 8px;
   max-width: 70%;
   align-self: flex-start;
   word-wrap: break-word;
 }
 
-/* input area */
+/* INPUT AREA */
 form {
   display: flex;
-  padding: 12px;
-  background: #1e1f22;
+  border-top: 1px solid #222;
 }
 
 input {
   flex: 1;
-  background: #383a40;
-  border: none;
-  border-radius: 6px;
-  padding: 10px;
+  padding: 14px;
+  background: #111;
   color: white;
-  font-size: 14px;
-}
-
-input::placeholder {
-  color: #b5bac1;
+  border: none;
+  outline: none;
+  font-size: 16px;
 }
 
 button {
-  margin-left: 8px;
-  background: #5865f2;
+  padding: 14px 20px;
+  background: white;
+  color: black;
   border: none;
-  border-radius: 6px;
-  color: white;
-  padding: 10px 16px;
-  font-weight: 600;
   cursor: pointer;
-}
-
-button:hover {
-  background: #4752c4;
-}
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
-
-.header {
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 14px;
-  font-size: 18px;
   font-weight: bold;
 }
 
-#messages {
-  padding: 10px;
+button:hover {
+  background: #ddd;
 }
-
