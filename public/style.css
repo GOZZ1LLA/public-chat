@@ -131,3 +131,59 @@ button:hover {
   color: #666;
   font-size: 14px;
 }
+
+
+/* ABOUT PAGE */
+.about {
+  background: black;
+  color: white;
+}
+
+.about-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.about-container h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.rules-title {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.about-container ul {
+  margin-top: 10px;
+  margin-left: 20px;
+  color: #bbb;
+}
+
+.about-container li {
+  margin-bottom: 8px;
+}
+
+.about-links {
+  margin-top: 40px;
+}
+
+.about-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.about-links a:hover {
+  text-decoration: underline;
+}
