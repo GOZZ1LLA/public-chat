@@ -47,9 +47,13 @@ body {
   padding: 10px 14px;
   border-radius: 10px;
   margin-bottom: 8px;
-  max-width: 70%;
+
+  max-width: 60%;
+  width: fit-content;
+
   align-self: flex-start;
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* INPUT AREA */
