@@ -5,32 +5,19 @@
   <title>THE BRO CHAT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Socket.IO -->
-  <script src="/socket.io/socket.io.js"></script>
 </head>
 
-<body>
-  <!-- Header -->
-  <div class="hero">THE BRO CHAT</div>
+<body class="home">
+  <div class="home-container">
+    <h1>THE BRO CHAT</h1>
+    <p>A simple public chat room for everyone.</p>
 
-  <!-- Chat -->
-  <div class="chat">
-    <div id="messages"></div>
-
-    <form id="form">
-      <input
-        id="input"
-        autocomplete="off"
-        placeholder="Say something to the bros"
-      />
-      <button type="submit">Send</button>
-    </form>
+    <a href="/chat.html" class="enter-btn">Enter Chat</a>
   </div>
 
-  <!-- Client JS -->
-  <script src="script.js"></script>
+  <footer class="footer">
+    <p>© 2025 The Bro Chat</p>
+  </footer>
 </body>
 </html>
