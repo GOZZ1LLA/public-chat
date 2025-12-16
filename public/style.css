@@ -84,3 +84,50 @@ button {
 button:hover {
   background: #ddd;
 }
+
+
+/* HOME PAGE */
+.home {
+  background: black;
+  color: white;
+}
+
+.home-container {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-container h1 {
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.home-container p {
+  font-size: 18px;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.enter-btn {
+  padding: 14px 30px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.enter-btn:hover {
+  background: #ddd;
+}
+
+.footer {
+  height: 60px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
