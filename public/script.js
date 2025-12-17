@@ -1,31 +1,63 @@
-let username = localStorage.getItem("username") || "Anonymous";
+import { db } from "./firebase.js";
+import {
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const socket = io({
-  transports: ["polling"]
-});
+const messagesRef = collection(db, "messages");
 
-const form = document.getElementById("form");
-const input = document.getElementById("input");
+const form = document.getElementById("chat-form");
+const input = document.getElementById("chat-input");
 const messagesDiv = document.getElementById("messages");
 
-function addMessage(msg) {
-  const messageWrapper = document.createElement("div");
-  messageWrapper.className = "message-wrapper";
+const username =
+  localStorage.getItem("username") || "An Unknown Brother";
 
-  const usernameEl = document.createElement("div");
-  usernameEl.className = "message-username";
-  usernameEl.textContent = msg.user;
+// Listen for messages (LIVE)
+onSnapshot(query(messagesRef, orderBy("number")), snapshot => {
+  messagesDiv.innerHTML = "";
+  snapshot.forEach(doc => {
+    renderMessage(doc.data());
+  });
+});
 
-  const bubbleEl = document.createElement("div");
-  bubbleEl.className = "message-bubble";
-  bubbleEl.textContent = msg.text;
+function renderMessage(msg) {
+  const wrap = document.createElement("div");
+  wrap.className = "message-wrap";
 
-  messageWrapper.appendChild(usernameEl);
-  messageWrapper.appendChild(bubbleEl);
+  wrap.innerHTML = `
+    <div class="username">${msg.user}</div>
+    <div class="bubble">
+      <span class="number">#${msg.number}</span>
+      ${msg.text}
+    </div>
+  `;
 
-  messagesDiv.appendChild(messageWrapper);
+  messagesDiv.appendChild(wrap);
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-// Load old messages
-socket.on("chat-history", history => {
+async function getNextNumber() {
+  const snap = await getDocs(messagesRef);
+  return snap.size + 1;
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!input.value.trim()) return;
+
+  const number = await getNextNumber();
+
+  await addDoc(messagesRef, {
+    user: username,
+    text: input.value,
+    number,
+    created: Date.now()
+  });
+
+  input.value = "";
+});
