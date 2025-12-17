@@ -207,3 +207,29 @@ button:hover {
 .home-link:hover {
   text-decoration: underline;
 }
+
+/* GOOGLE LOGIN BUTTON */
+.google-btn {
+  margin-top: 18px;
+  padding: 14px 28px;
+  background: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-btn:hover {
+  background: #357ae8;
+}
+
+.google-btn:active {
+  transform: scale(0.98);
+}
