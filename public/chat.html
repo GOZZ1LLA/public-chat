@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>THE BRO CHAT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="style.css" />
-  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <div class="hero chat-header">
-  <a href="/" class="home-link">Home</a>
-  <span>THE BRO CHAT</span>
-</div>
+<body class="black">
 
+<header class="top">
+  <button onclick="location.href='index.html'">HOME</button>
+  <h1>THE BRO CHAT</h1>
+</header>
 
-  <div class="chat">
-    <div id="messages"></div>
+<div id="messages"></div>
 
-    <form id="form">
-      <input
-        id="input"
-        autocomplete="off"
-        placeholder="Type a message..."
-      />
-      <button type="submit">Send</button>
-    </form>
-  </div>
+<form id="chat-form">
+  <input
+    id="chat-input"
+    placeholder="Say something to the bros..."
+    autocomplete="off"
+  >
+  <button type="submit">SEND</button>
+</form>
 
-  <script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
