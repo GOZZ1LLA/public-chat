@@ -22,17 +22,20 @@
   const provider = new GoogleAuthProvider();
 
   window.googleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
+  try {
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
 
-      localStorage.setItem("username", user.displayName);
-      window.location.href = "/chat.html";
-    } catch (err) {
-      alert("Login failed");
-      console.error(err);
-    }
-  };
+    localStorage.setItem("username", user.displayName);
+    window.location.href = "/chat.html";
+  } catch (err) {
+    console.error("GOOGLE LOGIN ERROR OBJECT:", err);
+    console.error("ERROR CODE:", err.code);
+    console.error("ERROR MESSAGE:", err.message);
+    alert(err.message);
+  }
+};
+
 </script>
 
 </head>
