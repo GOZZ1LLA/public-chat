@@ -29,26 +29,6 @@
     </form>
   </div>
 
-  <script src="script.js">
-    console.log("USERNAME IN STORAGE:", localStorage.getItem("username"));
-
-    const messageWrapper = document.createElement("div");
-messageWrapper.className = "message-wrapper";
-
-const usernameEl = document.createElement("div");
-usernameEl.className = "message-username";
-usernameEl.textContent = msg.user;
-
-const bubbleEl = document.createElement("div");
-bubbleEl.className = "message-bubble";
-bubbleEl.textContent = msg.text;
-
-messageWrapper.appendChild(usernameEl);
-messageWrapper.appendChild(bubbleEl);
-
-messagesContainer.appendChild(messageWrapper);
-messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
